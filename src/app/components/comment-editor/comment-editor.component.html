@@ -1,3 +1,21 @@
-<p>
-  comment-editor works!
-</p>
+<div class="editor">
+    <div class="avatar">
+      <img [src]="comment.user.avatar_url" alt="" height="44px" width="44px">
+    </div>
+    <div class="editor-container">
+      <div class="editor-header">
+        <div class="tabs">
+          <button class="selected tab">Write</button>
+          <button class="tab">Preview</button>
+        </div>
+      </div>
+      <div class="editor-body">
+        <textarea class="editor-textarea"></textarea>
+        <div class="editor-footer">
+          <span>Markdown is supported</span>
+          <button class="submit-button">Comment</button>
+        </div>
+      </div>
+ 
+    </div>
+  </div>

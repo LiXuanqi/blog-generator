@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
-import { CommentListComponent } from './components/comment-list/comment-list.component';
+
 import { CommentEditorComponent } from './components/comment-editor/comment-editor.component';
 import { CommentCardComponent } from './components/comment-card/comment-card.component';
 
@@ -26,7 +26,6 @@ registerLocaleData(zh);
     PostListComponent,
     PostComponent,
     CommentComponent,
-    CommentListComponent,
     CommentEditorComponent,
     CommentCardComponent
   ],
