@@ -8,6 +8,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 export class PostListComponent implements OnInit {
 
   postList = [];
+  labels = [];
 
   constructor(
     @Inject("github") private github
@@ -15,6 +16,7 @@ export class PostListComponent implements OnInit {
 
   ngOnInit() {
     this.getPosts();
+    this.getLabels();
   }
 
   getPosts() {
@@ -22,6 +24,14 @@ export class PostListComponent implements OnInit {
       .subscribe((data) => {
         console.log(data);
         this.postList = data;
+      });
+  }
+
+  getLabels() {
+    this.github.getLabels()
+      .subscribe((data) => {
+        console.log(data);
+        this.labels = data;
       });
   }
 
