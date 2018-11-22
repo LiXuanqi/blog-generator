@@ -43,8 +43,8 @@ export class CommentComponent implements OnInit {
       });
   }
 
-  addComment() {
-    this.github.addComment(1, "test post 11")
+  addComment(body) {
+    this.github.addComment(1, body)
       .subscribe((data) => {
         console.log(data);
       });

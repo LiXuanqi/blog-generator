@@ -1,11 +1,30 @@
-<ul>
-  <li *ngFor="let post of postList">
-    <h4>{{ post.title }}</h4>
-  </li>
-</ul>
 
-<ul>
-  <li *ngFor="let label of labels">
-    <h4>{{ label.name }}</h4>
-  </li>
-</ul>
+<nz-tag *ngFor="let label of labels">{{ label.name }}</nz-tag>
+
+<nz-list
+[nzDataSource]="postList"
+[nzItemLayout]="'vertical'"
+[nzRenderItem]="item"
+[nzPagination]="pagination">
+  <ng-template #item let-item>
+      <nz-list-item [nzContent]="item.content" [nzActions]="[starAction,likeAction,msgAction]" [nzExtra]="extra">
+          <ng-template #starAction><i nz-icon type="star-o" style="margin-right: 8px;"></i> 156</ng-template>
+          <ng-template #likeAction><i nz-icon type="like-o" style="margin-right: 8px;"></i> 156</ng-template>
+          <ng-template #msgAction><i nz-icon type="message" style="margin-right: 8px;"></i> 2</ng-template>
+          <nz-list-item-meta
+              nzAvatar='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'
+              [nzTitle]="nzTitle"
+              nzDescription="'Ant Design, a design language for background applications, is refined by Ant UED Team.'">
+              <ng-template #nzTitle>
+                <a routerLink="/posts/1" routerLinkActive="active">{{ item.title }}</a>
+              </ng-template>
+          </nz-list-item-meta>
+          <ng-template #extra>
+              <img width="272" alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png">
+          </ng-template>
+      </nz-list-item>
+  </ng-template>
+  <ng-template #pagination>
+      <nz-pagination [nzPageIndex]="1" [nzTotal]="50"></nz-pagination>
+  </ng-template>
+</nz-list>

@@ -10,17 +10,33 @@ import { GithubService } from '../app/services/github.service';
 import { PostComponent } from './components/post/post.component';
 import { OAuthInterceptor } from './services/oauth-interceptor';
 import { CommentComponent } from './components/comment/comment.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
+import { registerLocaleData } from '@angular/common';
+import zh from '@angular/common/locales/zh';
+import { CommentListComponent } from './components/comment-list/comment-list.component';
+import { CommentEditorComponent } from './components/comment-editor/comment-editor.component';
+import { CommentCardComponent } from './components/comment-card/comment-card.component';
+
+registerLocaleData(zh);
 @NgModule({
   declarations: [
     AppComponent,
     PostListComponent,
     PostComponent,
-    CommentComponent
+    CommentComponent,
+    CommentListComponent,
+    CommentEditorComponent,
+    CommentCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    NgZorroAntdModule
   ],
   providers: [{
     provide: "github",
@@ -29,7 +45,7 @@ import { CommentComponent } from './components/comment/comment.component';
     provide: HTTP_INTERCEPTORS,
     useClass: OAuthInterceptor,
     multi: true
-  }],
+  }, { provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
