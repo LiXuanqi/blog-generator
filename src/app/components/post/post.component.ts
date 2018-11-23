@@ -1,4 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import QRCode from 'qrcode'
 
 @Component({
   selector: 'app-post',
@@ -7,12 +8,26 @@ import { Component, OnInit, Inject } from '@angular/core';
 })
 export class PostComponent implements OnInit {
   theHtmlString = "<h1>HTMP STRING</h1>";
+  QRCodeImageUrl = "";
   constructor(
     @Inject("github") private github
   ) { }
 
   ngOnInit() {
     this.getPost();
+    this.generateQRCode();
+    
+  }
+
+  generateQRCode() {
+    QRCode.toDataURL(window.location.href)
+      .then(url => {
+        console.log(url)
+        this.QRCodeImageUrl = url;
+      })
+      .catch(err => {
+        console.error(err)
+      })
   }
 
   getPost() {
