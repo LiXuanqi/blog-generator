@@ -8,6 +8,8 @@ const GITHUB_GET_ISSUES_API = `${GITHUB_API}/repos/${GITHUB_USER_NAME}/${REPOSIT
 const GITHUB_MARKDOWN_RENDER_API = `${GITHUB_API}/markdown/raw`;
 const GITHUB_GET_LABELS_API = `${GITHUB_API}/repos/${GITHUB_USER_NAME}/${REPOSITORY_NAME}/labels`;
 
+const GITHUB_GET_USER_INFO_API = 'https://api.github.com/user';
+
 const GITHUB_OAUTH_AUTHORIZE_URL = "https://github.com/login/oauth/authorize";
 const GITHUB_OAUTH_GET_ACCESS_TOKEN_URL = "https://auth.baixiaotu.cc";
 export {
@@ -19,5 +21,6 @@ export {
   GITHUB_CLIENT_ID,
   GITHUB_CLIENT_SECRET,
   GITHUB_OAUTH_AUTHORIZE_URL,
-  GITHUB_OAUTH_GET_ACCESS_TOKEN_URL
+  GITHUB_OAUTH_GET_ACCESS_TOKEN_URL,
+  GITHUB_GET_USER_INFO_API
 }

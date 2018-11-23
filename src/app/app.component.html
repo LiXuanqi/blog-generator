@@ -2,8 +2,9 @@
     <nz-header>
       <div class="logo"></div>
       <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">
-        <li nz-menu-item>博客</li>
-        <li nz-menu-item>关于我</li>
+        
+        <li nz-menu-item><a routerLink="/posts" routerLinkActive="active">博客</a></li>
+        <li nz-menu-item><a routerLink="/about" routerLinkActive="active">关于我</a></li>
       </ul>
     </nz-header>
     <nz-content style="padding:0 50px;">
