@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PostComponent implements OnInit {
   postId = null;
-  theHtmlString = "<h1>HTMP STRING</h1>";
+  theHtmlString = "<h1>HTML STRING</h1>";
   QRCodeImageUrl = "";
   constructor(
     @Inject("github") private github,

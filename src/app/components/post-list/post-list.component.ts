@@ -10,7 +10,7 @@ export class PostListComponent implements OnInit {
 
   postList = [];
   labels = [];
-
+  filterLabels = ['Algorithm'];
   constructor(
     @Inject("github") private github
   ) { }

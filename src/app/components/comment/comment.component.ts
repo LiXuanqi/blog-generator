@@ -8,23 +8,30 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./comment.component.sass']
 })
 export class CommentComponent implements OnInit {
-
+  postId = null;
   comments = [];
 
   constructor(
-    @Inject("github") private github
+    @Inject("github") private github,
+    private activatedRoute: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    this.getCommentsByIssueNumber(1);
+    this.activatedRoute.params.subscribe(params => {
+      console.log(params);
+      this.postId = +params['id'];
+    });
+    this.getCommentsByIssueNumber(this.postId);
   }
 
   getCommentsByIssueNumber(number) {
-    this.github.getCommentsByIssueNumber(number)
-      .subscribe((data) => {
-        console.log(data);
-        this.comments = data;
-      });
+    if (number) {
+      this.github.getCommentsByIssueNumber(number)
+        .subscribe((data) => {
+          console.log(data);
+          this.comments = data;
+        });
+    }
   }
 
  

@@ -18,6 +18,7 @@ import zh from '@angular/common/locales/zh';
 
 import { CommentEditorComponent } from './components/comment-editor/comment-editor.component';
 import { CommentCardComponent } from './components/comment-card/comment-card.component';
+import { FilterByLabelPipe } from './pipes/filter-by-label.pipe';
 
 registerLocaleData(zh);
 @NgModule({
@@ -27,7 +28,8 @@ registerLocaleData(zh);
     PostComponent,
     CommentComponent,
     CommentEditorComponent,
-    CommentCardComponent
+    CommentCardComponent,
+    FilterByLabelPipe
   ],
   imports: [
     BrowserModule,
