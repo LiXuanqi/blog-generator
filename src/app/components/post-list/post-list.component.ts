@@ -1,4 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { decodeMetaInfo } from 'src/app/utils/util';
 
 @Component({
   selector: 'app-post-list',
@@ -22,9 +23,17 @@ export class PostListComponent implements OnInit {
   getPosts() {
     this.github.getIssues()
       .subscribe((data) => {
-        console.log(data);
-        this.postList = data;
+        // decode meta info.
+        this.postList = data.map((item) => {
+          const metaInfo = decodeMetaInfo(item);
+          return {
+            ...item,
+            metaInfo
+          }
+        });
+        console.log(this.postList);
       });
+   
   }
 
   getLabels() {

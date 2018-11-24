@@ -12,6 +12,9 @@ const GITHUB_GET_USER_INFO_API = 'https://api.github.com/user';
 
 const GITHUB_OAUTH_AUTHORIZE_URL = "https://github.com/login/oauth/authorize";
 const GITHUB_OAUTH_GET_ACCESS_TOKEN_URL = "https://auth.baixiaotu.cc";
+
+const DEFAULT_POST_COVER_PIC = "https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png";
+
 export {
   GITHUB_USER_NAME,
   REPOSITORY_NAME,
@@ -22,5 +25,6 @@ export {
   GITHUB_CLIENT_SECRET,
   GITHUB_OAUTH_AUTHORIZE_URL,
   GITHUB_OAUTH_GET_ACCESS_TOKEN_URL,
-  GITHUB_GET_USER_INFO_API
+  GITHUB_GET_USER_INFO_API,
+  DEFAULT_POST_COVER_PIC
 }

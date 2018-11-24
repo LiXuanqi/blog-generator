@@ -7,22 +7,29 @@
 [nzRenderItem]="item"
 [nzPagination]="pagination">
   <ng-template #item let-item>
-      <nz-list-item [nzContent]="item.content" [nzActions]="[starAction,likeAction,msgAction]" [nzExtra]="extra">
-          <ng-template #starAction><i nz-icon type="star-o" style="margin-right: 8px;"></i> 156</ng-template>
-          <ng-template #likeAction><i nz-icon type="like-o" style="margin-right: 8px;"></i> 156</ng-template>
-          <ng-template #msgAction><i nz-icon type="message" style="margin-right: 8px;"></i> 2</ng-template>
+      <nz-list-item [nzContent]="item.metaInfo.desc" [nzActions]="[dateAction, commentAction]" [nzExtra]="extra">
+          <!-- <ng-template #starAction><i nz-icon type="star-o" style="margin-right: 8px;"></i> 156</ng-template> -->
+          <ng-template #dateAction><i nz-icon type="clock-circle" style="margin-right: 8px;"></i> {{ item.created_at | date: 'mediumDate' }}</ng-template>
+          <ng-template #commentAction><i nz-icon type="message" style="margin-right: 8px;"></i> {{ item.comments }}</ng-template>
+          <ng-template #nzInfo>
+              <!-- LABELS -->
+              <div *ngFor="let label of item.labels">
+                <nz-tag>{{ label.name }}</nz-tag>
+              </div>
+          </ng-template>
           <nz-list-item-meta
               nzAvatar='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'
               [nzTitle]="nzTitle"
-              nzDescription="'Ant Design, a design language for background applications, is refined by Ant UED Team.'">
+              [nzDescription]="nzInfo">
               <ng-template #nzTitle>
-                <a routerLink="/posts/1" routerLinkActive="active">{{ item.title }}</a>
+                <a [routerLink]="['/posts', item.number]" routerLinkActive="active">{{ item.title }}</a>
               </ng-template>
           </nz-list-item-meta>
           <ng-template #extra>
-              <img width="272" alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png">
+              <img width="272" alt="logo" [src]="item.metaInfo.pic">
           </ng-template>
       </nz-list-item>
+
   </ng-template>
   <ng-template #pagination>
       <nz-pagination [nzPageIndex]="1" [nzTotal]="50"></nz-pagination>
