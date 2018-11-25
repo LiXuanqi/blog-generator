@@ -1,0 +1,37 @@
+<!-- TODO: filter posts by labels -->
+<!-- <nz-tag *ngFor="let label of labels">{{ label.name }}</nz-tag> -->
+  
+<nz-list
+[nzDataSource]="postList"
+[nzItemLayout]="'vertical'"
+[nzRenderItem]="item"
+[nzPagination]="pagination">
+  <ng-template #item let-item>
+      <nz-list-item [nzContent]="item.metaInfo.desc" [nzActions]="[dateAction, commentAction]" [nzExtra]="extra">
+          <!-- <ng-template #starAction><i nz-icon type="star-o" style="margin-right: 8px;"></i> 156</ng-template> -->
+          <ng-template #dateAction><i nz-icon type="clock-circle" style="margin-right: 8px;"></i> {{ item.created_at | date: 'mediumDate' }}</ng-template>
+          <ng-template #commentAction><i nz-icon type="message" style="margin-right: 8px;"></i> {{ item.comments }}</ng-template>
+          <ng-template #nzInfo>
+              <!-- LABELS -->
+              <div *ngFor="let label of item.labels">
+                <nz-tag>{{ label.name }}</nz-tag>
+              </div>
+          </ng-template>
+          <nz-list-item-meta
+              nzAvatar='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'
+              [nzTitle]="nzTitle"
+              [nzDescription]="nzInfo">
+              <ng-template #nzTitle>
+                <a [routerLink]="['/posts', item.number]" routerLinkActive="active">{{ item.title }}</a>
+              </ng-template>
+          </nz-list-item-meta>
+          <ng-template #extra>
+              <img width="272" alt="logo" [src]="item.metaInfo.pic">
+          </ng-template>
+      </nz-list-item>
+
+  </ng-template>
+  <ng-template #pagination>
+      <nz-pagination [nzPageIndex]="1" [nzTotal]="50"></nz-pagination>
+  </ng-template>
+</nz-list>
