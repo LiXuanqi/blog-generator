@@ -21,12 +21,12 @@ export class CommentComponent implements OnInit {
       console.log(params);
       this.postId = +params['id'];
     });
-    this.getCommentsByIssueNumber(this.postId);
+    this.getComments();
   }
 
-  getCommentsByIssueNumber(number) {
-    if (number) {
-      this.github.getCommentsByIssueNumber(number)
+  getComments() {
+    if (this.postId) {
+      this.github.getCommentsByIssueNumber(this.postId)
         .subscribe((data) => {
           console.log(data);
           this.comments = data;

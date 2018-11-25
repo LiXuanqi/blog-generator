@@ -1,8 +1,8 @@
-
-<nz-tag *ngFor="let label of labels">{{ label.name }}</nz-tag>
-
+<!-- TODO: filter posts by labels -->
+<!-- <nz-tag *ngFor="let label of labels">{{ label.name }}</nz-tag> -->
+  
 <nz-list
-[nzDataSource]="postList | filterByLabel:filterLabels"
+[nzDataSource]="postList"
 [nzItemLayout]="'vertical'"
 [nzRenderItem]="item"
 [nzPagination]="pagination">

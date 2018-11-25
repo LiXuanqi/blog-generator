@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { setAccessToken } from 'src/app/utils/accessTokenUtil';
 import { GITHUB_OAUTH_AUTHORIZE_URL, GITHUB_CLIENT_ID } from 'src/config';
@@ -11,7 +11,9 @@ import { Location } from '@angular/common';
 })
 export class CommentEditorComponent implements OnInit {
 
-  user = {};
+  user: any = {};
+
+  @Output() updateCommentEvent = new EventEmitter();
 
   constructor(
     @Inject("github") private github,
@@ -43,7 +45,7 @@ export class CommentEditorComponent implements OnInit {
     this.github.addComment(1, body)
       .subscribe(() => {
         console.log("comment success");
-        // TODO: update the comments list.
+        this.updateCommentEvent.next();
       });
   }
 

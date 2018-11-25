@@ -19,7 +19,7 @@
         <textarea #textarea class="editor-textarea"></textarea>
         <div class="editor-footer">
           <span>Markdown is supported</span>
-          <button class="submit-button" (click)="addComment(textarea.value)">Comment</button>
+          <button class="submit-button" (click)="addComment(textarea.value); textarea.value=''">Comment</button>
         </div>
       </div>
  
