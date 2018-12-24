@@ -29,7 +29,12 @@ export class GithubService {
       responseType: 'text'
     };
 
-    return this.http.post(GITHUB_MARKDOWN_RENDER_API, markdown, { responseType: "text"});
+    const body = {
+      text: markdown,
+      mode: 'gfm'
+    }
+
+    return this.http.post(GITHUB_MARKDOWN_RENDER_API, body, { responseType: "text"});
   }
 
   getLabels() {

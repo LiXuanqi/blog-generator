@@ -5,7 +5,7 @@ const GITHUB_CLIENT_SECRET = "517a5fdb49a810b9b4873b43a6bbcf132608c598";
 
 const GITHUB_API = "https://api.github.com";
 const GITHUB_GET_ISSUES_API = `${GITHUB_API}/repos/${GITHUB_USER_NAME}/${REPOSITORY_NAME}/issues`;
-const GITHUB_MARKDOWN_RENDER_API = `${GITHUB_API}/markdown/raw`;
+const GITHUB_MARKDOWN_RENDER_API = `${GITHUB_API}/markdown`;
 const GITHUB_GET_LABELS_API = `${GITHUB_API}/repos/${GITHUB_USER_NAME}/${REPOSITORY_NAME}/labels`;
 
 const GITHUB_GET_USER_INFO_API = 'https://api.github.com/user';
