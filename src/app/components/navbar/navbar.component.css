@@ -12,3 +12,7 @@
 .ant-menu-item-selected {
   border-radius: 4px;
 }
+
+:focus {
+  outline-style: none;
+}
