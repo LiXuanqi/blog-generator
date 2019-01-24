@@ -2,6 +2,7 @@
   width: 100%;
   background: #111517;
   border-radius: 4px;
+  /* min-width: 600px; */
 }
 
 .navbar-item {
