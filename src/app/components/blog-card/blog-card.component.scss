@@ -26,6 +26,7 @@ $shadow: rgba(0, 0, 0, 0.2);
 }
 
 .blog-card {
+  height: 250px;
   display: flex;
   flex-direction: row;
   background: $white;
