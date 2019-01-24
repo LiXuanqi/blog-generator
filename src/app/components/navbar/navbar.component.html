@@ -1,6 +1,20 @@
 <ul id="navbar" nz-menu [nzMode]="'horizontal'" [nzTheme]="'dark'">
-  <li class="navbar-item" nz-menu-item routerLink="/home"><i nz-icon type="home"></i>Home</li>
-  <li class="navbar-item" nz-menu-item routerLink="/blogs"><i nz-icon type="robot"></i>Blog</li>
-  <li class="navbar-item" nz-menu-item routerLink="/"><i nz-icon type="code"></i>Projects</li>
-  <li class="navbar-item" nz-menu-item routerLink="/"><i nz-icon type="profile"></i>About</li>
+  <li class="navbar-item" nz-menu-item routerLink="/home"><i nz-icon type="home" theme="fill"></i>Home</li>
+  <li class="navbar-item" nz-menu-item routerLink="/blogs"><i nz-icon type="edit" theme="fill"></i>Blog</li>
+  <li class="navbar-item" nz-menu-item routerLink="/"><i nz-icon type="code" theme="fill"></i>Projects</li>
+
+  <!-- <li nz-submenu>
+    <span title class="navbar-item"><i nz-icon type="code"></i>Projects</span>
+    <ul>
+      <li nz-menu-item class="navbar-item">LinkedIn</li>
+      <li nz-menu-item class="navbar-item">GitHub</li>
+    </ul>
+  </li> -->
+  <li nz-submenu>
+      <span title class="navbar-item"><i nz-icon type="fire" theme="fill"></i>About</span>
+      <ul>
+        <li nz-menu-item class="navbar-item"><i nz-icon type="linkedin" theme="fill"></i>LinkedIn</li>
+        <li nz-menu-item class="navbar-item"><i nz-icon type="github" theme="fill"></i>GitHub</li>
+      </ul>
+    </li>
 </ul>
