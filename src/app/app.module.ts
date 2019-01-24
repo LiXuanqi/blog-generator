@@ -21,6 +21,9 @@ import { CommentCardComponent } from './components/comment-card/comment-card.com
 import { FilterByLabelPipe } from './pipes/filter-by-label.pipe';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CoverComponent } from './components/cover/cover.component';
+import { HomeComponent } from './pages/home/home.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { BlogCardComponent } from './components/blog-card/blog-card.component';
 
 registerLocaleData(zh);
 @NgModule({
@@ -33,7 +36,10 @@ registerLocaleData(zh);
     CommentCardComponent,
     FilterByLabelPipe,
     NavbarComponent,
-    CoverComponent
+    CoverComponent,
+    HomeComponent,
+    BlogComponent,
+    BlogCardComponent
   ],
   imports: [
     BrowserModule,
