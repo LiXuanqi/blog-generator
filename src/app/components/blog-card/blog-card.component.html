@@ -3,7 +3,7 @@
     <article class="blog-card">
       <img class="post-image" [src]="post.metaInfo.pic" />
       <div class="article-details">
-        <h4 class="post-category">Web</h4>
+        <h4 class="post-category" *ngFor="let label of post.labels">{{label.name}}</h4>
         <h3 class="post-title">{{post.title}}</h3>
         <p class="post-description">{{post.metaInfo.desc}}</p>
         <p class="post-author">{{ post.created_at | date: 'mediumDate' }}</p>
