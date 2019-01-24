@@ -17,24 +17,12 @@ $shadow: rgba(0, 0, 0, 0.2);
   }
 }
 
-body {
-  display: flex;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  color: $text;
-  background: $bg;
-  font-size: 0.9375rem;
-  min-height: 100vh;
-  margin: 0;
-  line-height: 1.6;
-  align-items: center;
-  justify-content: center;
-  text-rendering: optimizeLegibility;
-}
+
 
 #container {
-  width: 30rem;
-  height: 13.625rem;
+  width: 100%;
+  height: 100%;
+  margin-top: 16px;
 }
 
 .blog-card {

@@ -1,13 +1,14 @@
-<div id="container">
-    <a class="card-link" href="#">
-        <article class="blog-card">
-          <img class="post-image" src="https://images.unsplash.com/photo-1543363950-02704687ebed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" />
-          <div class="article-details">
-            <h4 class="post-category">Algorithm</h4>
-            <h3 class="post-title">TITLE</h3>
-            <p class="post-description">描述</p>
-            <p class="post-author">By Xuanqi</p>
-          </div>
-        </article>
-      </a>
+<div id="container" [routerLink]="[post.number]" routerLinkActive="active">
+  <a class="card-link">
+    <article class="blog-card">
+      <img class="post-image" [src]="post.metaInfo.pic" />
+      <div class="article-details">
+        <h4 class="post-category">Web</h4>
+        <h3 class="post-title">{{post.title}}</h3>
+        <p class="post-description">{{post.metaInfo.desc}}</p>
+        <p class="post-author">{{ post.created_at | date: 'mediumDate' }}</p>
+        <p># of Comment: {{post.comments}}</p>
+      </div>
+    </article>
+  </a>
 </div>

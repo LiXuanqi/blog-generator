@@ -1,9 +1,11 @@
 <!-- TODO: filter posts by labels -->
 <!-- <nz-tag *ngFor="let label of labels">{{ label.name }}</nz-tag> -->
-<app-blog-card></app-blog-card>
-<app-blog-card></app-blog-card>
-<app-blog-card></app-blog-card>
-<app-blog-card></app-blog-card>
+<div nz-row nzGutter="16" style="width: 100%">
+    <div nz-col nzSpan="8" *ngFor="let post of postList">
+        <app-blog-card [post]="post"></app-blog-card>
+    </div>
+  </div>
+
 <!-- <nz-list
 [nzDataSource]="postList"
 [nzItemLayout]="'vertical'"
