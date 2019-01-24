@@ -19,6 +19,8 @@ import zh from '@angular/common/locales/zh';
 import { CommentEditorComponent } from './components/comment-editor/comment-editor.component';
 import { CommentCardComponent } from './components/comment-card/comment-card.component';
 import { FilterByLabelPipe } from './pipes/filter-by-label.pipe';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { CoverComponent } from './components/cover/cover.component';
 
 registerLocaleData(zh);
 @NgModule({
@@ -29,7 +31,9 @@ registerLocaleData(zh);
     CommentComponent,
     CommentEditorComponent,
     CommentCardComponent,
-    FilterByLabelPipe
+    FilterByLabelPipe,
+    NavbarComponent,
+    CoverComponent
   ],
   imports: [
     BrowserModule,

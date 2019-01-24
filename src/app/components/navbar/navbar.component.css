@@ -1,0 +1,13 @@
+#navbar {
+  width: 100%;
+  background: #111517;
+  border-radius: 4px;
+}
+
+.navbar-item {
+  color: #f2f4f6
+}
+
+.ant-menu-item-selected {
+  border-radius: 4px;
+}
