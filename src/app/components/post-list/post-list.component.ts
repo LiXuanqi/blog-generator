@@ -19,6 +19,7 @@ export class PostListComponent implements OnInit {
   ngOnInit() {
     this.getPosts();
     this.getLabels();
+
   }
 
   getPosts() {

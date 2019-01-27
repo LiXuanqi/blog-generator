@@ -15,6 +15,8 @@ const GITHUB_OAUTH_GET_ACCESS_TOKEN_URL = "https://auth.baixiaotu.cc";
 
 const DEFAULT_POST_COVER_PIC = "https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png";
 
+const UNSPLASH_API = "https://api.unsplash.com";
+const UNSPLASH_ACCESS_KEY = "93fc141a31cdd449eefd35f3c9038d002391f3e5c97b54b18366d9399f1fc3e7";
 export {
   GITHUB_USER_NAME,
   REPOSITORY_NAME,
@@ -26,5 +28,7 @@ export {
   GITHUB_OAUTH_AUTHORIZE_URL,
   GITHUB_OAUTH_GET_ACCESS_TOKEN_URL,
   GITHUB_GET_USER_INFO_API,
-  DEFAULT_POST_COVER_PIC
+  DEFAULT_POST_COVER_PIC,
+  UNSPLASH_API,
+  UNSPLASH_ACCESS_KEY
 }

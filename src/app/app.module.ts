@@ -24,6 +24,7 @@ import { CoverComponent } from './components/cover/cover.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { BlogCardComponent } from './components/blog-card/blog-card.component';
+import { UnsplashService } from './services/unsplash.service';
 
 registerLocaleData(zh);
 @NgModule({
@@ -52,6 +53,9 @@ registerLocaleData(zh);
   providers: [{
     provide: "github",
     useClass: GithubService
+  }, {
+    provide: "unsplash",
+    useClass: UnsplashService
   }, {
     provide: HTTP_INTERCEPTORS,
     useClass: OAuthInterceptor,

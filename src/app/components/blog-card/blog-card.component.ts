@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-blog-card',
@@ -9,9 +9,17 @@ export class BlogCardComponent implements OnInit {
   
   @Input() post: any;
 
-  constructor() { }
+  constructor(
+    @Inject("unsplash") private unsplash
+  ) { }
 
   ngOnInit() {
   }
 
+  getRandomPhoto() {
+    this.unsplash.getRandomPhoto()
+    .subscribe((data) => {
+      return data['urls']['small'];
+    })
+  }
 }
