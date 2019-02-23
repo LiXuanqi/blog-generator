@@ -54,7 +54,7 @@ $shadow: rgba(0, 0, 0, 0.2);
   @include transition(opacity 0.3s ease);
   display: block;
   width: 100%;
-	object-fit: cover;
+  object-fit: cover;
 }
 
 .article-details {

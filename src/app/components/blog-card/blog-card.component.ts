@@ -1,25 +1,33 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
+import { POST_COVER_PICS } from "src/config";
 
 @Component({
-  selector: 'app-blog-card',
-  templateUrl: './blog-card.component.html',
-  styleUrls: ['./blog-card.component.scss']
+  selector: "app-blog-card",
+  templateUrl: "./blog-card.component.html",
+  styleUrls: ["./blog-card.component.scss"]
 })
 export class BlogCardComponent implements OnInit {
-  
   @Input() post: any;
 
-  constructor(
-    @Inject("unsplash") private unsplash
-  ) { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  getRandomPhotosByCategory() {
+    const labels = this.post.labels;
+    const categories = new Set();
+    for (let i = 0; i < labels.length; i++) {
+      categories.add(labels[i].name);
+    }
+    if (categories.has('Algorithm')) {
+      const photos =  POST_COVER_PICS['algorithm'];
+      return photos[this.getRandom(photos.length - 1)];
+    }
+    console.log(labels);
+    return POST_COVER_PICS.default;
   }
 
-  getRandomPhoto() {
-    this.unsplash.getRandomPhoto()
-    .subscribe((data) => {
-      return data['urls']['small'];
-    })
+  getRandom(upper) {
+    return Math.floor((Math.random() * (upper + 1)));
   }
 }

@@ -1,7 +1,7 @@
 <div id="container" [routerLink]="[post.number]" routerLinkActive="active">
   <a class="card-link">
     <article class="blog-card">
-      <img class="post-image" [src]="post.metaInfo.pic" />
+      <img class="post-image" [src]="post.metaInfo.pic || getRandomPhotosByCategory()" />
       <div class="article-details">
         <h4 class="post-category" *ngFor="let label of post.labels">{{label.name}}</h4>
         <h3 class="post-title">{{post.title}}</h3>
