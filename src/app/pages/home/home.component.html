@@ -1,1 +1,23 @@
 <app-cover></app-cover>
+
+<div class="container">
+  <!-- BLOGS -->
+  <h1>LATEST BLOGS</h1>
+  <hr class="divider">
+  <div nz-row nzGutter="16" style="width: 100%">
+    <!-- TODO: optimize the logic to get latest blogs. -->
+    <div nz-col nzSpan="8" [nzXXl]="8" [nzLg]="12" [nzSm]="24" *ngFor="let post of postList.slice(0,3)">
+      <app-blog-card [post]="post"></app-blog-card>
+    </div>
+  </div>
+  <!-- PROJECTS -->
+  <h1>PROJECTS</h1>
+  <hr class="divider">
+  <div nz-row nzGutter="32" style="width: 100%">
+    <!-- TODO: optimize the logic to get latest blogs. -->
+    <div nz-col nzSpan="6" [nzXXl]="6" [nzLg]="8" [nzSm]="12" [nzXs]="24">
+      <app-project-card [title]="'NuaaOversea'" [labels]="['nodejs', 'python']"></app-project-card>
+    </div>
+  </div>
+  
+</div>

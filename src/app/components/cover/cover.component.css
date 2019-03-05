@@ -36,9 +36,15 @@ hr {
   padding: 20rem 0;
   text-shadow: 1px 1px 3px #111517;
   z-index: 100;
+  text-align:center
 }
 
 .text-container > h1, h4 {
   color: #f2f4f6;
   text-align: center;
+}
+
+.filter {
+  -webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
 }

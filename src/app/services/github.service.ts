@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { GITHUB_GET_ISSUES_API, GITHUB_MARKDOWN_RENDER_API, GITHUB_GET_LABELS_API, GITHUB_OAUTH_GET_ACCESS_TOKEN_URL, GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, GITHUB_GET_USER_INFO_API } from '../../config';
-import { Observable } from 'rxjs';
 import { getAccessToken } from '../utils/accessTokenUtil';
+
 @Injectable({
   providedIn: 'root'
 })

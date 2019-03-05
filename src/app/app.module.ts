@@ -25,6 +25,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { BlogCardComponent } from './components/blog-card/blog-card.component';
 import { UnsplashService } from './services/unsplash.service';
+import { ProjectCardComponent } from './components/project-card/project-card.component';
 
 registerLocaleData(zh);
 @NgModule({
@@ -40,7 +41,8 @@ registerLocaleData(zh);
     CoverComponent,
     HomeComponent,
     BlogComponent,
-    BlogCardComponent
+    BlogCardComponent,
+    ProjectCardComponent
   ],
   imports: [
     BrowserModule,
