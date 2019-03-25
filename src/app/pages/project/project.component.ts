@@ -10,7 +10,8 @@ export class ProjectComponent implements OnInit {
   projects = [
     {
       title: 'NuaaOversea',
-      labels: ['React', 'Flask', 'Python']
+      labels: ['React', 'Flask', 'Python'],
+      logo: '/assets/nuaa-logo.png'
     },
     {
       title: 'RateMyNuaa',

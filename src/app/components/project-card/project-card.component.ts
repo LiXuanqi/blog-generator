@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProjectCardComponent implements OnInit {
   @Input() title: string;
   @Input() labels: string[];
+  @Input() logoSrc: string;
   bgColorClass = 'bg-gradient1'
   constructor() { }
   
