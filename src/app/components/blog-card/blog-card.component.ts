@@ -23,7 +23,6 @@ export class BlogCardComponent implements OnInit {
       const photos =  POST_COVER_PICS['algorithm'];
       return photos[this.getRandom(photos.length - 1)];
     }
-    console.log(labels);
     return POST_COVER_PICS.default;
   }
 

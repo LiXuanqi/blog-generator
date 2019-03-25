@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getPosts();
+    this.getProjects();
   }
   
   getPosts() {
@@ -29,8 +30,13 @@ export class HomeComponent implements OnInit {
             metaInfo
           }
         });
-        console.log(this.postList);
       });
-   
+  }
+
+  getProjects() {
+    this.github.getPinnedRepositories()
+      .subscribe((data) => {
+        console.log(data);
+      });
   }
 }

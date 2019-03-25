@@ -1,0 +1,6 @@
+<div nz-row nzGutter="32" style="width: 100%">
+  <!-- TODO: optimize the logic to get latest blogs. -->
+  <div nz-col nzSpan="6" [nzXXl]="6" [nzLg]="8" [nzSm]="12" [nzXs]="24" *ngFor="let project of projects">
+    <app-project-card [title]="project.title" [labels]="project.labels"></app-project-card>
+  </div>
+</div>

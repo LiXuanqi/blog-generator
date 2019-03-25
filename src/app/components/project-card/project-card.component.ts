@@ -8,9 +8,16 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProjectCardComponent implements OnInit {
   @Input() title: string;
   @Input() labels: string[];
+  bgColorClass = 'bg-gradient1'
   constructor() { }
-
+  
   ngOnInit() {
+    this.bgColorClass = this.getRandomBackgroundGradientColor(14)
+    
   }
 
+  getRandomBackgroundGradientColor(max) {
+    const random = Math.floor(Math.random() * max) + 1
+    return `bg-gradient${random}`
+  }
 }

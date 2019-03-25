@@ -13,6 +13,9 @@ const GITHUB_GET_USER_INFO_API = 'https://api.github.com/user';
 const GITHUB_OAUTH_AUTHORIZE_URL = "https://github.com/login/oauth/authorize";
 const GITHUB_OAUTH_GET_ACCESS_TOKEN_URL = "https://auth.baixiaotu.cc";
 
+const GITHUB_GRAPHQL_URL = "https://api.github.com/graphql"
+const GITHUB_ACCESS_TOKEN = "648994145002776d350f246a622023eeaaf52e88";
+
 const POST_COVER_PICS = {
   default: "https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png",
   algorithm: [
@@ -37,5 +40,7 @@ export {
   GITHUB_GET_USER_INFO_API,
   POST_COVER_PICS,
   UNSPLASH_API,
-  UNSPLASH_ACCESS_KEY
+  UNSPLASH_ACCESS_KEY,
+  GITHUB_GRAPHQL_URL,
+  GITHUB_ACCESS_TOKEN
 }

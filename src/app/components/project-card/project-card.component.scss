@@ -1,7 +1,51 @@
+@mixin bg-linear-gradient($color) {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.35) 0%, rgba(255, 255, 255, 0.35) 100%), $color;
+}
+.bg-gradient1 {
+  @include bg-linear-gradient(rgb(239, 83, 80))
+}
+.bg-gradient2 {
+  @include bg-linear-gradient(rgb(0, 51, 102))
+}
+.bg-gradient3 {
+  @include bg-linear-gradient(rgb(96, 125, 139))
+}
+.bg-gradient4 {
+  @include bg-linear-gradient(rgb(255, 164, 0))
+}
+.bg-gradient5 {
+  @include bg-linear-gradient(rgb(159, 68, 1))
+}
+.bg-gradient6 {
+  @include bg-linear-gradient(rgb(252, 185, 0))
+}
+.bg-gradient7 {
+  @include bg-linear-gradient(rgb(205, 220, 57))
+}
+.bg-gradient8 {
+  @include bg-linear-gradient(rgb(165, 101, 169))
+}
+.bg-gradient9 {
+  @include bg-linear-gradient(rgb(153, 0, 239))
+}
+.bg-gradient10 {
+  @include bg-linear-gradient(rgb(137, 113, 217))
+}
+.bg-gradient11 {
+  @include bg-linear-gradient(rgb(115, 80, 57))
+}
+.bg-gradient12 {
+  @include bg-linear-gradient(rgb(253, 130, 145))
+}
+.bg-gradient13 {
+  @include bg-linear-gradient(rgb(25, 71, 91))
+}
+.bg-gradient14 {
+  @include bg-linear-gradient(rgb(150, 18, 32))
+}
 .container {
   color: rgb(255, 255, 255);
   background-blend-mode: normal;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.35) 0%, rgba(255, 255, 255, 0.35) 100%), rgb(239, 83, 80);
   padding: 2%;
   min-height: 320px;
   width: 100%;
@@ -16,7 +60,6 @@
   align-items: center;
   align-content: center;
   text-align: center;
- 
 }
 
 h3 {
