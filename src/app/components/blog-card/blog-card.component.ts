@@ -8,10 +8,12 @@ import { POST_COVER_PICS } from "src/config";
 })
 export class BlogCardComponent implements OnInit {
   @Input() post: any;
-
+  pic: string;
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.pic = this.post.metaInfo.pic;
+  }
 
   getRandomPhotosByCategory() {
     const labels = this.post.labels;

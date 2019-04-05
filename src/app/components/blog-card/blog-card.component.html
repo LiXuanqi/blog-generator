@@ -1,14 +1,24 @@
-<div id="container" [routerLink]="[post.number]" routerLinkActive="active">
-  <a class="card-link">
-    <article class="blog-card">
-      <img class="post-image" [src]="post.metaInfo.pic || getRandomPhotosByCategory()" />
-      <div class="article-details">
-        <h4 class="post-category" *ngFor="let label of post.labels">{{label.name}}</h4>
-        <h3 class="post-title">{{post.title}}</h3>
-        <p class="post-description">{{post.metaInfo.desc}}</p>
-        <p class="post-author">{{ post.created_at | date: 'mediumDate' }}</p>
-        <p># of Comment: {{post.comments}}</p>
-      </div>
-    </article>
-  </a>
+<div class="wrapper">
+  <div class="pic" [style.background-image]="'url(' + pic + ')'"></div>
+  <div id="container" [routerLink]="[post.number]" routerLinkActive="active">
+    <a class="card-link">
+      <article class="blog-card">
+        <!-- <img class="post-image" [src]="post.metaInfo.pic || getRandomPhotosByCategory()" /> -->
+        <div class="article-details">
+          <div>
+            <h4 class="post-category" *ngFor="let label of post.labels">{{label.name}}</h4>
+            <h3 class="post-title">{{post.title}}</h3>
+            <p class="post-description">{{post.metaInfo.desc}}</p>
+          </div>
+          <div class="post-infos">
+            <span class="info-container"><i nz-icon type="calendar" nzTheme="outline" class="icon"></i>{{ post.created_at | date: 'mediumDate' }}</span>
+            <span class="info-container"><i nz-icon type="message" nzTheme="outline" class="icon"></i>{{post.comments}}</span>
+          </div>
+          <!-- <p><i nz-icon type="message" nzTheme="outline" class="icon"></i>{{post.comments}}</p> -->
+        </div>
+      </article>
+    </a>
+  </div>
+    
 </div>
+
