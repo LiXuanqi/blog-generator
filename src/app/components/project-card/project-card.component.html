@@ -1,7 +1,7 @@
 <!-- getRandomBackgroundGradientColor(max) should fit the css. -->
 <div class="container" [ngClass]="bgColorClass">
   <img [src]="logoSrc" alt="" class="icon">
-  <h3>{{ title }}</h3>
+  <h3>{{ name }}</h3>
   <div class="labels" nz-row nzGutter="16">
     <span nzSpan="6" class="label" *ngFor="let label of labels">{{ label }}</span>
   </div>

@@ -23,6 +23,8 @@ export class PostComponent implements OnInit {
     });
     this.getPost();
     this.generateQRCode();
+
+
   }
 
   generateQRCode() {

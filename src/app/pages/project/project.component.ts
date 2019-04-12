@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-project',
@@ -7,25 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectComponent implements OnInit {
 
-  projects = [
-    {
-      title: 'NuaaOversea',
-      labels: ['React', 'Flask', 'Python'],
-      logo: '/assets/nuaa-logo.png'
-    },
-    {
-      title: 'RateMyNuaa',
-      labels: ['Vue', 'Pyramid', 'Python']
-    },
-    {
-      title: 'Leetcode-solutions',
-      labels: ['Java', 'Python']
-    }
-  ]
+  projects = []
 
-  constructor() { }
+  constructor(
+    @Inject("api") private api
+  ) { }
 
   ngOnInit() {
+    this.getProjects();
+    console.log(this.projects);
   }
 
+  getProjects() {
+      this.api.getProjects()
+        .subscribe((data) => {
+          // decode meta info.
+          this.projects = data;
+        });
+  }
 }

@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./project-card.component.scss']
 })
 export class ProjectCardComponent implements OnInit {
-  @Input() title: string;
+  @Input() name: string;
   @Input() labels: string[];
   @Input() logoSrc: string;
   bgColorClass = 'bg-gradient1'

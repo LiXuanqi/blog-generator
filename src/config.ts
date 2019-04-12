@@ -24,6 +24,8 @@ const POST_COVER_PICS = {
   ]
 }
 
+const FIREBASE_URL = "https://us-central1-resume-70e66.cloudfunctions.net"
+const PROJECTS_URL = `${FIREBASE_URL}/getProjects`
 
 const UNSPLASH_API = "https://api.unsplash.com";
 const UNSPLASH_ACCESS_KEY = "93fc141a31cdd449eefd35f3c9038d002391f3e5c97b54b18366d9399f1fc3e7";
@@ -42,5 +44,6 @@ export {
   UNSPLASH_API,
   UNSPLASH_ACCESS_KEY,
   GITHUB_GRAPHQL_URL,
-  GITHUB_ACCESS_TOKEN
+  GITHUB_ACCESS_TOKEN,
+  PROJECTS_URL
 }

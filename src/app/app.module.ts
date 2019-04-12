@@ -27,6 +27,7 @@ import { BlogCardComponent } from './components/blog-card/blog-card.component';
 import { UnsplashService } from './services/unsplash.service';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 import { ProjectComponent } from './pages/project/project.component';
+import { ApiService } from './services/api.service';
 
 registerLocaleData(zh);
 @NgModule({
@@ -60,6 +61,9 @@ registerLocaleData(zh);
   }, {
     provide: "unsplash",
     useClass: UnsplashService
+  }, {
+    provide: "api",
+    useClass: ApiService
   }, {
     provide: HTTP_INTERCEPTORS,
     useClass: OAuthInterceptor,
